@@ -51,54 +51,47 @@ git clone https://github.com/your-username/EventAPI.git
 cd EventAPI
 ```
 
-2. Set Up a Virtual Environment
-bash
-Copy code
+### 2. Set Up a Virtual Environment
+```bash
 python -m venv env
 source env/bin/activate   # On Windows, use `env\Scripts\activate`
-3. Install Dependencies
-bash
-Copy code
+```
+
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
-Environment Setup
+```
+
+### Environment Setup
 Install MySQL
+```bash
 For Ubuntu:
-bash
-Copy code
 sudo apt update
 sudo apt install mysql-server
 sudo mysql_secure_installation
+
+
 For macOS:
-bash
-Copy code
 brew install mysql
 For Windows: Download and install MySQL from MySQL Downloads.
 Start MySQL Service
 Linux/macOS:
-bash
-Copy code
+
 sudo service mysql start
 Windows: Start the MySQL service from the Services app.
 Create a Database
 Log in to MySQL and create a new database:
-
-bash
-Copy code
 mysql -u root -p
 In the MySQL shell:
-
-sql
-Copy code
 CREATE DATABASE eventdb;
 CREATE USER 'event_user'@'localhost' IDENTIFIED BY 'your_password';
 GRANT ALL PRIVILEGES ON eventdb.* TO 'event_user'@'localhost';
 FLUSH PRIVILEGES;
-Configuration
+```
+### Configuration
+```bash
 Update MySQL Database Settings
 In EventAPI/settings.py, configure the database:
-
-python
-Copy code
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -109,19 +102,19 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-Apply Migrations
-bash
-Copy code
+```
+### Apply Migrations
+```bash
 python manage.py makemigrations
 python manage.py migrate
-Create a Superuser
-bash
-Copy code
-python manage.py createsuperuser
-Running the Application
-To start the server:
+```
 
-bash
-Copy code
+**Create a Superuser**
+python manage.py createsuperuser
+
+### Running the Application
+```bash
+To start the server:
 python manage.py runserver
 The application will be accessible at: http://127.0.0.1:8000/
+```

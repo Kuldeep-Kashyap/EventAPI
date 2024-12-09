@@ -267,3 +267,15 @@ The application will be accessible at: `http://127.0.0.1:8000/`.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+---
+
+## SQL query to fetch the total tickets
+```bash
+SELECT e.id, e.name, e.date, e.total_tickets, e.tickets_sold
+FROM events_event e
+ORDER BY e.tickets_sold DESC
+LIMIT 3;
+```
+---
